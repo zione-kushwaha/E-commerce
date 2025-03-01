@@ -1,4 +1,4 @@
-import 'package:expense_tracker/utils/helpers/helper_functions.dart';
+import 'package:expense_tracker/features/authentication/onboarding/onboarding_controller.dart';
 import 'package:flutter/material.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
@@ -13,7 +13,7 @@ class OnboardingSkip extends StatelessWidget {
       top: TDeviceUtils.getAppBarHeight(),
       right: TSizes.defaultSpace,
       child: TextButton(
-        onPressed: () {},
+        onPressed: OnboardingController.instance.skipPage,
         child: Text(TTexts.skip),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:expense_tracker/features/authentication/onboarding/onboarding_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../../utils/constants/colors.dart';
@@ -20,7 +21,7 @@ class OnboardingNextButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 shape: CircleBorder(),
                 backgroundColor: isdark ? TColors.primary : TColors.black),
-            onPressed: () {},
+            onPressed: OnboardingController.instance.nextPage,
             child: Icon(
               Iconsax.arrow_right_3,
               color: Colors.white,

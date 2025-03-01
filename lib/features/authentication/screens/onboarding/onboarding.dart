@@ -1,6 +1,8 @@
+import 'package:expense_tracker/features/authentication/onboarding/onboarding_controller.dart';
 import 'package:expense_tracker/utils/constants/image_strings.dart';
 import 'package:expense_tracker/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'widgets/onboarding_navigation.dart';
 import 'widgets/onboarding_next.dart';
 import 'widgets/onboarding_pages.dart';
@@ -11,11 +13,14 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnboardingController());
     return Scaffold(
       body: Stack(
         children: [
           //horiziontal Scrollable pages
           PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndex,
             physics: const BouncingScrollPhysics(),
             children: [
               OnBoardingPage(
