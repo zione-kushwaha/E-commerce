@@ -1,50 +1,49 @@
-import 'package:expense_tracker/utils/constants/sizes.dart';
-import 'package:expense_tracker/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import '/utils/constants/sizes.dart';
+import '/utils/device/device_utility.dart';
+import '/utils/helpers/helper_functions.dart';
 
-class TAppBar extends StatelessWidget implements PreferredSize {
+class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TAppBar(
       {super.key,
-      this.Title,
+      this.title,
       this.showBackArrow = false,
-      this.LeadingIcon,
+      this.leadingIcon,
       this.actions,
-      this.onLeadingPressed});
+      this.onLeadingIconPressed});
 
-  final Widget? Title;
+  final Widget? title;
   final bool showBackArrow;
-  final IconData? LeadingIcon;
+  final IconData? leadingIcon;
   final List<Widget>? actions;
-  final VoidCallback? onLeadingPressed;
-
-  @override
-  // TODO: implement child
-  Widget get child => throw UnimplementedError();
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight());
+  final VoidCallback? onLeadingIconPressed;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    final dark = THelperFunctions.isDarkMode(context);
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: TSizes.md),
-        child: AppBar(
-          automaticallyImplyLeading: showBackArrow,
-          title: Title,
+      padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
+      child: AppBar(
+          automaticallyImplyLeading: false,
           leading: showBackArrow
               ? IconButton(
-                  icon: Icon(Iconsax.arrow_left),
                   onPressed: () => Get.back(),
+                  icon: Icon(Iconsax.arrow_left,
+                      color: dark ? Colors.white : Colors.black),
                 )
-              : LeadingIcon != null
+              : leadingIcon != null
                   ? IconButton(
-                      onPressed: onLeadingPressed, icon: Icon(LeadingIcon))
+                      onPressed: onLeadingIconPressed,
+                      icon: Icon(leadingIcon),
+                    )
                   : null,
-          actions: actions,
-        ));
+          title: title,
+          actions: actions),
+    );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight());
 }

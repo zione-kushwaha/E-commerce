@@ -6,19 +6,18 @@ import '../../../../../common/widgets/products_cart/cart_menu_icon.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/text_strings.dart';
 
-class ThomeAppbar extends StatelessWidget {
-  const ThomeAppbar({
+class ThemeAppBar extends StatelessWidget {
+  const ThemeAppBar({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TprimaryHeaderContainer(
+    return TPrimaryHeaderContainer(
       child: Column(
         children: [
           TAppBar(
-            Title: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+            title: Column(
               children: [
                 Text(TTexts.homeAppbarTitle,
                     style: Theme.of(context)
