@@ -7,7 +7,10 @@ class TImages {
   static const String loader = "assets/images/animations/loader-animation.json";
   static const String emptyCart = "assets/images/animations/empty-cart.json";
 
-  static const String appLogo = "assets/logos/logo.png";
+  // getting the app logo
+  static const String lightLogo = "assets/logos/t-store-splash-logo-white.png";
+  static const String darkAppLogo =
+      "assets/logos/t-store-splash-logo-black.png";
 
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";

@@ -1,4 +1,12 @@
+import 'package:expense_tracker/common/widgets/success_screen/success_screen.dart';
+import 'package:expense_tracker/features/authentication/screens/login/login.dart';
 import 'package:expense_tracker/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:expense_tracker/features/authentication/screens/password_configration/forget_password.dart';
+import 'package:expense_tracker/features/authentication/screens/signup/signup.dart';
+import 'package:expense_tracker/features/authentication/screens/signup/widgets/verify_email.dart';
+import 'package:expense_tracker/navigation_menu.dart';
+import 'package:expense_tracker/utils/constants/image_strings.dart';
+import 'package:expense_tracker/utils/constants/text_strings.dart';
 import 'package:expense_tracker/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +35,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: Ttheme.lightTheme,
       darkTheme: Ttheme.darkTheme,
-      home: OnboardingScreen(),
+      home: NavigationMenu(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:expense_tracker/features/authentication/onboarding/onboarding_controller.dart';
+import 'package:expense_tracker/features/authentication/controller/onboarding/onboarding_controller.dart';
 import 'package:expense_tracker/utils/constants/image_strings.dart';
 import 'package:expense_tracker/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

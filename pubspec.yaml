@@ -49,6 +49,7 @@ dependencies:
   flutter_native_splash: ^2.4.4
   smooth_page_indicator: ^1.2.1
   iconsax: ^0.0.8
+  intl_phone_field: ^3.2.0
 
 dev_dependencies:
   flutter_test:
